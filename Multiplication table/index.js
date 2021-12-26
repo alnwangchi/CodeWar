@@ -34,7 +34,7 @@ multiplicationTable2 = function(size) {
 }
 
 
-console.log(multiplicationTable(3));
-console.log(multiplicationTable2(3));
+console.log(multiplicationTable(4));
+console.log(multiplicationTable2(4)); // 第二個才對
 
 
