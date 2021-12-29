@@ -49,9 +49,15 @@ function getOrder(input) {
   return resultToUpperCase.join(' ')
 }
 
-const test = "milkshakepizzachickenfriescokeburgerpizzasandwichmilkshakepizza"
+// 補充一個網上大神所寫的精簡優化版 Bang!!! 硬要縮寫的話還可以塞成 one liner!!!
+const capitalize = word => word.slice(0, 1).toUpperCase() + word.slice(1);
+const comparator = (a, b) => menu.indexOf(a) - menu.indexOf(b);
 
+const getOrder2 = input => input.match(new RegExp(menu.join("|"), "ig")).map(capitalize).sort(comparator).join(" ")
+
+const test = "milkshakepizzachickenfriescokeburgerpizzasandwichmilkshakepizza"
 console.log(getOrder(test));
+console.log(getOrder2(test));
 // expect "Burger Fries Chicken Pizza Pizza Pizza Sandwich Milkshake Milkshake Coke"
 
 // console.log(test.indexOf("pizza"));
